@@ -1,0 +1,30 @@
+<view class="container">
+  <!-- 搜索框 -->
+  <view class="search-box">
+    <input class="search-input" placeholder="请输入地点" />
+    <button class="search-button">搜索</button>
+  </view>
+
+  <!-- 校园地图 -->
+  <map
+    id="campus-map"
+    class="map"
+    latitude="{{campusLocation.latitude}}"
+    longitude="{{campusLocation.longitude}}"
+    markers="{{markers}}"
+    show-location
+  ></map>
+
+  <!-- 更多功能按钮 -->
+  <view class="more-button" bindtap="toggleDrawer">
+    <text>更多功能</text>
+  </view>
+
+  <!-- 上拉框 -->
+  <view class="drawer {{isDrawerOpen ? 'open' : ''}}">
+    <view class="function-button" bindtap="navigateToRoutePlan">路线规划</view>
+    <view class="function-button" bindtap="navigateToFavorite">地点收藏</view>
+    <view class="function-button" bindtap="navigateToNotice">校园公告</view>
+    <view class="function-button" bindtap="navigateToProfile">个人中心</view>
+  </view>
+</view>
