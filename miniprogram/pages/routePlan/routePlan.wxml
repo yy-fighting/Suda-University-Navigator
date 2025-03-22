@@ -1,0 +1,5 @@
+<view class="container">
+  <text>路线规划页面</text>
+  <input placeholder="起点" class="input" />
+  <input placeholder="终点" class="input" />
+</view>

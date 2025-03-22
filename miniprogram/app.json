@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/main/main",
+    "pages/routePlan/routePlan",
+    "pages/favorite/favorite",
+    "pages/notice/notice",
+    "pages/PersonalCenter/PersonalCenter"
+  ],
+  "window": {
+    "navigationBarTitleText": "校园导航",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f8f8",
+    "enablePullDownRefresh": false
+  }
+}

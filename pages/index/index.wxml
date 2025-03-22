@@ -1,4 +1,0 @@
-<view class="container">
-  <view class="welcome">欢迎使用校园导航小程序</view>
-  <button bindtap="navigateToMain">进入校园导航</button>
-</view>
