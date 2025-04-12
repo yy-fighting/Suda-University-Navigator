@@ -1,94 +1,71 @@
-
 .container {
   display: flex;
   flex-direction: column;
   height: 100vh;
+}
+
+/* 搜索框容器 */
+.search-container {
+  padding: 15px;
+  background-color: #fff;
+}
+
+/* 搜索框主体 */
+.search-box {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  padding: 0 15px;
+}
+
+/* 搜索图标（放大镜emoji） */
+.search-icon {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #999;
+}
+
+/* 输入框 */
+.search-input {
+  flex: 1;
+  height: 100%;
+  font-size: 14px;
+  color: #333;
+  background-color: transparent;
+  /* 关键修复：去除所有边框 */
+  border: none;
+  outline: none;
+  /* 去除iOS默认样式 */
+  -webkit-appearance: none;
+}
+
+/* 占位文字样式 */
+.placeholder-style {
+  color: #999;
+}
+
+.map-area {
+  flex: 1; /* 关键：自动填充剩余空间 */
   position: relative;
 }
 
-/* 搜索框样式 */
-.search-box {
+.button-container {
   display: flex;
-  padding: 15px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  justify-content: space-around;
+  padding: 12px 15px; /* 上下间距缩小 */
+  background-color: #fff;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.08); /* 阴影更柔和 */
 }
 
-.search-input {
-  flex: 1;
-  height: 40px;
-  padding: 0 15px;
-  border: 1px solid #e0e0e0;
-  border-radius: 20px;
-  margin-right: 10px;
-  font-size: 14px;
-  outline: none;
-}
-
-.search-button {
-  width: 80px;
-  height: 40px;
+.bottom-btn {
+  width: 42%; /* 宽度略微缩小 */
+  padding: 8px 0; /* 内边距调整 */
   background-color: #07c160;
   color: white;
-  border-radius: 20px;
-  font-size: 14px;
-  border: none;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* 地图样式 */
-.map {
-  flex: 1;
-  width: 100%;
-}
-
-/* 更多功能按钮 */
-.more-button {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50px;
-  background-color: #07c160;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* 上拉框样式 */
-.drawer {
-  position: fixed;
-  bottom: -300px; /* 默认隐藏 */
-  left: 0;
-  right: 0;
-  background-color: #ffffff;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-  transition: bottom 0.3s ease-in-out; /* 动画效果 */
-  padding: 20px;
-}
-
-.drawer.open {
-  bottom: 0; /* 展开时显示 */
-}
-
-/* 功能按钮样式 */
-.function-button {
-  height: 50px;
-  background-color: #f8f8f8;
-  color: #333;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 10px 0;
-  font-size: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px; /* 圆角微调 */
+  font-size: 14px; /* 字体缩小 */
+  line-height: 1.4; /* 行高优化 */
+  margin: 0 5px; /* 增加按钮间距 */
 }

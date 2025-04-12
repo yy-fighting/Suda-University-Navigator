@@ -1,4 +1,5 @@
 {
-  "navigationBarTitleText": "校园导航",
-  "navigationStyle": "custom" 
+  "navigationBarTitleText": "地图导航",
+  "navigationBarBackgroundColor": "#ffffff"
+
 }

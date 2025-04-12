@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* 地图容器 */
+map {
+  flex: 1;
+}
+
+/* 导航信息面板 */
+.nav-panel {
+  padding: 20rpx;
+  background: white;
+  box-shadow: 0 -5rpx 20rpx rgba(0,0,0,0.1);
+}
+
+.nav-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+/* 讲解按钮 */
+.listen-btn {
+  background: #07C160;
+  color: white;
+  border-radius: 50rpx;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}

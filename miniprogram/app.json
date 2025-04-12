@@ -1,17 +1,31 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/main/main",
+    "pages/index/index",  
+    "pages/main/main" ,  
     "pages/routePlan/routePlan",
-    "pages/favorite/favorite",
-    "pages/notice/notice",
-    "pages/PersonalCenter/PersonalCenter"
+    "pages/routeDetail/routeDetail",
+    "pages/navigation/navigation",
+    "pages/spot-detail/spot-detail"
   ],
   "window": {
-    "navigationBarTitleText": "校园导航",
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#f8f8f8",
-    "enablePullDownRefresh": false
+    "navigationBarTitleText": "校园导航",  
+    "navigationBarBackgroundColor": "#ffffff",  
+    "navigationBarTextStyle": "black", 
+    "backgroundColor": "#f8f8f8", 
+    "enablePullDownRefresh": false 
+  },
+
+  "requiredPrivateInfos": [
+    "getLocation",
+    "onLocationChange",
+    "startLocationUpdate"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于判断是否在景点范围内"  
+    },
+    "scope.userLocationBackground": {
+      "desc": "后台持续定位，确保路线规划准确"  
+    }
   }
 }
