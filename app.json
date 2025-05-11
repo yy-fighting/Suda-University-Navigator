@@ -1,0 +1,18 @@
+{
+  "requiredPrivateInfos": [
+    "getLocation",
+    "startLocationUpdate",
+    "onLocationChange"
+  ],
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "地图导航"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于展示您的当前位置"
+    }
+  }
+}
