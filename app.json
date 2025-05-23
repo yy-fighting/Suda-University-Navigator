@@ -5,7 +5,13 @@
     "onLocationChange"
   ],
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/routeRecommend/routeRecommend",
+    "pages/routeMap/routeMap",
+    "pages/searchPage/searchPage",
+    "pages/scenicList/scenicList",
+    "pages/navigation/navigation",
+    "pages/aiChat/aiChat"
   ],
   "window": {
     "navigationBarTitleText": "地图导航"

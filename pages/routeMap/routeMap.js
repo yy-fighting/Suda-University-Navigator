@@ -33,24 +33,6 @@ Page({
           openTime:"8:00-17:00"
         }
       ],
-      [
-        {
-          name : "方塔餐厅",
-          latitude: 31.308659,  // 替换为实际经度
-          longitude: 120.639693, // 替换为实际纬度
-          image: "../../images/food1.jpg",
-          description: "一楼：千里香",
-          openTime:"晚上七点左右会逐渐停止营业"
-        },
-        {
-          name : "梅花餐厅",
-          latitude: 31.308659,  // 替换为实际经度
-          longitude: 120.639693, // 替换为实际纬度
-          image: "../../images/food2.jpg",
-          description: "二楼：汉堡",
-          openTime:"汉堡好像会开到八九点"
-        }
-      ]
     ],
     markers: []
   },
@@ -182,10 +164,5 @@ Page({
         url: '/pages/aiChat/aiChat'
       });
     }
-  },
-  onsearchTap(){
-    wx.navigateTo({
-      url:'/pages/searchPage/searchPage'
-    });
   }
 });

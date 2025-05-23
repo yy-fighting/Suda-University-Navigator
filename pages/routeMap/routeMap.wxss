@@ -1,0 +1,210 @@
+/* pages/routeMap/routeMap.wxss */
+/* index.wxss */
+.container {
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  position: relative; /* 新增 */
+  padding: 0;
+}
+ 
+.title {
+  position: absolute;/* 相对于父容器 */
+  background-color: white;
+  top: 30rpx;
+  left: 80rpx;
+  right: 80rpx;
+  z-index: 999; /* 确保在地图上方 */
+  border-radius: 50rpx;
+  /* 添加以下两行，使内部文本居中 */
+  display: flex;
+  justify-content: center; /* 水平居中 */
+  align-items: center;      /* 垂直居中（可选） */
+  height: 60rpx;             /*设置固定高度以便垂直居中（可选） */
+}
+
+
+
+
+/* 需要给地图容器添加相对定位 */
+#map {
+  position: relative; /* 新增 */
+}
+
+/* index.wxss 修改部分 */
+.card-background {
+  position: absolute;
+  top: 55vh;
+  height: 50vh;
+  width: 100vw;
+  background: linear-gradient(#bcdcee 0%, #f4f5f8 100%);
+  border-radius: 50rpx 50rpx 0 0; /* 修复圆角显示问题 */
+  overflow: hidden; /* 新增防止内容溢出 */
+}
+
+.tab-text {
+  position: absolute;
+  left:30rpx;
+  font-size: 34rpx;
+  color: rgb(0, 0, 0);
+  transition: all 0.3s;
+  padding: 8rpx 24rpx;
+  border-radius: 50rpx;
+  margin: 10rpx;
+}
+
+
+
+
+
+.content-swiper {
+  position: absolute;
+  top:70rpx;
+  left:25rpx;
+  right:25rpx;
+  height: 37vh;
+  border-radius: 32rpx;
+  overflow: hidden;
+}
+
+.info-card {
+  background: white;
+  border-radius: 32rpx;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-wrapper {
+  height: 15vh;
+  width: 30vw;
+  margin:20rpx;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 32rpx;
+  background: #f5f7fa;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.content-area {
+  flex: 1;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+  position: relative;
+}
+
+.title-row {
+  position: absolute;
+  left: 40vw;
+  top:2vh;
+}
+
+.card-title {
+  font-size: 38rpx;
+  font-weight: 600;
+  color: #2c3e50;
+  max-width: 70%;
+}
+
+.open-time {
+  font-size: 24rpx;
+  color: #e74c3c;
+  background: #fdedec;
+  padding: 8rpx 24rpx;
+  border-radius: 50rpx;
+  flex-shrink: 0;
+  margin-top: 20rpx;
+}
+
+.card-desc {
+  font-size: 25rpx;
+  color: #7f8c8d;
+  line-height: 1.6;
+  flex:1;
+  max-height: 100rpx;
+}
+/* 位于 */
+.action-button {
+  position:absolute;
+  bottom: 15rpx;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 12rpx;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  padding: 5rpx;
+  border-radius: 30rpx;
+  transition: transform 0.2s;
+  height: 55rpx;
+}
+
+.action-button:active {
+  transform: scale(0.96);
+}
+
+.btn-text {
+  font-size: 25rpx;
+  color: white;
+  font-weight: 500;
+  width: 152rpx;
+}
+
+.btn-icon {
+  width: 28rpx;
+  height: 28rpx;
+}
+/* 功能按钮容器 */
+/* 功能按钮容器 */
+.function-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10rpx 0;
+  background-color: #ffffffcc; /* 半透明背景 */
+  border-radius: 50rpx;
+  box-shadow: 0 -2rpx 16rpx rgba(0, 0, 0, 0.08);
+  margin-top: 20rpx;
+}
+
+/* 单个功能按钮 */
+.function-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10rpx;
+  transition: all 0.3s ease;
+}
+
+/* 按钮图标 */
+.btn-icon {
+  width: 48rpx;
+  height: 48rpx;
+  /* margin-bottom: 8rpx; */
+  transition: transform 0.3s ease;
+}
+
+/* 按钮文字 */
+.btn-text {
+  margin-left: 8rpx;
+  font-size: 26rpx;
+  color:white;
+  line-height: 1.4;
+}
+
+/* 按钮点击反馈 */
+.function-btn:active {
+  background-color: #e0f7fa;
+  border-radius: 24rpx;
+}
+
+.function-btn:active .btn-icon {
+  transform: scale(1.1);
+}

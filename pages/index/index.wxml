@@ -6,86 +6,94 @@
     latitude="{{mapCenter.latitude}}"
     longitude="{{mapCenter.longitude}}"
     markers="{{markers}}"
+    polyline="{{polyline}}" 
     scale="16"
     style="width: 100%; height: 60vh;"
     show-location
   ></map>
 
-  <!-- 新增搜索框（保持原结构） -->
-  <view class="search-box-container">
-    <view class="search-box">
-      <input 
-        class="search-input" 
-        placeholder="搜索地点" 
-        disabled="{{false}}" 
-        focus="{{false}}"
-      />
-    </view>
-  </view>
+  <button class="icon-button" bindtap="onsearchTap">
+    <image class="button-icon" src="/images/icons/search.png" mode="aspectFit" />
+    <text class="search-text">搜索地点</text>
+  </button>
 
-  <!-- index.wxml 优化版 -->
-  <view class="card-container">
-    <!-- 导航标签 -->
-    <view class="tab-bar">
-      <view 
-        class="tab-item {{currentTab === 0 ? 'active' : ''}}" 
-        bindtap="switchTab" 
-        data-index="0"
-      >
-        <text class="tab-text">景点推荐</text>
-        <view class="underline"></view>
+  <view class="card-background">
+    <!-- index.wxml 优化版 -->
+    <view class="card-container">
+      <!-- 导航标签 -->
+      <view class="tab-bar">
+        <view 
+          class="tab-item {{currentTab === 0 ? 'active' : ''}}" 
+          bindtap="switchTab" 
+          data-index="0"
+        >
+          <text class="tab-text">景点推荐</text>
+        </view>
+        <view 
+          class="tab-item {{currentTab === 1 ? 'active' : ''}}" 
+          bindtap="switchTab" 
+          data-index="1"
+        >
+          <text class="tab-text">美食推荐</text>
+        </view>
       </view>
-      <view 
-        class="tab-item {{currentTab === 1 ? 'active' : ''}}" 
-        bindtap="switchTab" 
-        data-index="1"
+
+      <!-- 轮播卡片 -->
+      <swiper 
+        class="content-swiper" 
+        current="{{currentSwiper}}"
+        bindchange="onSwiperChange"
       >
-        <text class="tab-text">美食推荐</text>
-        <view class="underline"></view>
-      </view>
-    </view>
-
-    <!-- 轮播卡片 -->
-    <swiper 
-      class="content-swiper" 
-      current="{{currentSwiper}}"
-      bindchange="onSwiperChange"
-    >
-      <block wx:for="{{cards[currentTab]}}" wx:key="index">
-        <swiper-item>
-          <view class="info-card">
-            <!-- 顶部图片 -->
-            <view class="image-wrapper">
-              <image 
-                src="{{item.image}}" 
-                mode="aspectFill" 
-                class="card-image"
-                lazy-load="true"
-              ></image>
-            </view>
-
-            <!-- 文字内容区 -->
-            <view class="content-area">
-              <view class="title-row">
-                <text class="card-title">{{item.name}}</text>
-                <text class="open-time">{{item.openTime}}</text>
+        <block wx:for="{{cards[currentTab]}}" wx:key="index">
+          <swiper-item>
+            <view class="info-card">
+              <!-- 顶部图片 -->
+              <view class="image-wrapper">
+                <image 
+                  src="{{item.image}}" 
+                  mode="aspectFill" 
+                  class="card-image"
+                  lazy-load="true"
+                ></image>
               </view>
-              
-              <text class="card-desc">{{item.description}}</text>
-              
+
+              <view class="title-row">
+                <view class="card-title">{{item.name}}</view>
+                <view class="open-time">开放时间：{{item.openTime}}</view>
+              </view>
+
+              <!-- 文字内容区 -->
+              <view class="content-area">
+                <text class="card-desc">{{item.description}}</text>
+              </view>
               <button 
                 class="action-button" 
                 bindtap="navigateTo" 
                 data-location="{{item}}"
               >
+                <image class="button-icon" src="/images/icons/navigation.png" mode="aspectFit" />
                 <text class="btn-text">开始导航</text>
-                <image src="/icons/arrow-right.png" class="btn-icon"/>
               </button>
             </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <!-- 功能按钮组 -->
+      <view class="function-buttons">
+        <block wx:for="{{['路线推荐', 'AI问答']}}" wx:key="index">
+          <view class="function-btn" bindtap="onFunctionTap" data-type="{{item}}">
+            <!-- 图标 -->
+            <image 
+              class="btn-icon" 
+              src="/images/icons/{{item === '路线推荐' ? 'route' : 'ai'}}.png"
+              mode="aspectFit"
+            />
+            <!-- 文字 -->
+            <text class="btn-text">{{item}}</text>
           </view>
-        </swiper-item>
-      </block>
-    </swiper>
+        </block>
+      </view>
+    </view>
   </view>
 </view>
 
