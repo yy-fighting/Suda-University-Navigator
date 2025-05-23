@@ -1,5 +1,0 @@
-<!--pages/profile/profile.wxml-->
-<view class="profile-container">
-  <text class="profile-title">个人中心</text>
-  <button class="logout-btn" bindtap="onLogout">退出登录</button>
-</view>
