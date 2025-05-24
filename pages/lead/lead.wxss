@@ -1,0 +1,149 @@
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: #f4f5f8;
+}
+
+.map-element {
+  flex: 1;
+  width: 100%;
+}
+
+.navigation-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 30rpx 30rpx 0 0;
+  padding: 30rpx;
+  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.overview {
+  display: flex;
+  justify-content: space-around;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.total-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10rpx;
+}
+
+.info-label {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.info-value {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 500;
+}
+
+.steps-container {
+  height: 400rpx;
+  overflow: hidden;
+}
+
+.steps-list {
+  height: 100%;
+}
+
+.step-item {
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+  gap: 20rpx;
+}
+
+.step-item.active {
+  background-color: #f0f7ff;
+}
+
+.step-number {
+  width: 40rpx;
+  height: 40rpx;
+  background: #3498db;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  flex-shrink: 0;
+}
+
+.step-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10rpx;
+}
+
+.step-instruction {
+  font-size: 28rpx;
+  color: #333;
+  line-height: 1.4;
+}
+
+.step-details {
+  display: flex;
+  gap: 20rpx;
+}
+
+.step-distance,
+.step-duration {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.navigation-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.control-btn {
+  flex: 1;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  border: none;
+}
+
+.control-btn.prev {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.control-btn.next {
+  background: #3498db;
+  color: white;
+}
+
+.control-btn.end {
+  background: #e74c3c;
+  color: white;
+}
+
+.control-btn[disabled] {
+  opacity: 0.5;
+  background: #ccc;
+  color: #666;
+} 

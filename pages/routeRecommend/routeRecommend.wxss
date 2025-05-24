@@ -1,1 +1,192 @@
-/* pages/routeRecommend/routeRecommend.wxss */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100vh;
+  background: #f7f8fa;
+  position: relative;
+}
+
+.route-tabs {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  padding: 16rpx 0 0 0;
+  background: #fff;
+  border-bottom: none;
+  box-shadow: 0 6rpx 18rpx -8rpx #b3e5fc33;
+  border-bottom-left-radius: 24rpx;
+  border-bottom-right-radius: 24rpx;
+  z-index: 2;
+}
+.route-tab {
+  flex: 0 0 220rpx;
+  margin: 0 16rpx;
+  padding: 12rpx 8rpx;
+  border-radius: 16rpx;
+  background: #f5f5f5;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s;
+}
+.route-tab.active {
+  background: #e6f7ff;
+  box-shadow: 0 4rpx 16rpx #b3e5fc44;
+}
+.route-img {
+  width: 180rpx;
+  height: 100rpx;
+  border-radius: 12rpx;
+  object-fit: cover;
+  margin-bottom: 8rpx;
+}
+.route-tab.active .route-img {
+  border: 4rpx solid #4fc3f7;
+  box-shadow: 0 0 12rpx #4fc3f799;
+}
+.route-title {
+  font-weight: bold;
+  font-size: 28rpx;
+  color: #222;
+}
+.route-desc {
+  font-size: 22rpx;
+  color: #888;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx 28rpx 24rpx 28rpx;
+  background: #fff;
+  margin: -18rpx 18rpx 0 18rpx;
+  border-radius: 0 0 18rpx 18rpx;
+  box-shadow: 0 2rpx 12rpx #eee;
+  z-index: 1;
+}
+.day-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 18rpx;
+}
+.time-place-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18rpx;
+  font-size: 22rpx;
+  color: #666;
+  margin-bottom: 16rpx;
+}
+.main-img {
+  width: 100%;
+  height: 240rpx;
+  border-radius: 16rpx;
+  object-fit: cover;
+  margin-bottom: 32rpx;
+  box-shadow: 0 4rpx 16rpx #b3e5fc22;
+}
+.summary {
+  font-size: 24rpx;
+  color: #333;
+  margin-bottom: 24rpx;
+  line-height: 1.7;
+}
+.tips, .food {
+  font-size: 22rpx;
+  color: #444;
+  margin-bottom: 10rpx;
+}
+.tips-title, .food-title {
+  color: #ffb300;
+  font-weight: bold;
+}
+
+/* 悬浮按钮组样式 */
+.bottom-btns {
+  position: fixed;
+  right: 36rpx;
+  bottom: 48rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 18rpx;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  z-index: 99;
+}
+.btn {
+  min-width: 120rpx;
+  min-height: 48rpx;
+  font-size: 24rpx;
+  border-radius: 32rpx;
+  padding: 0 28rpx;
+  margin: 0;
+  box-shadow: 0 2rpx 8rpx #b3e5fc33;
+  opacity: 0.96;
+}
+.add-btn {
+  background: #fff;
+  color: #1976d2;
+  border: 1px solid #4fc3f7;
+}
+.map-btn {
+  background: linear-gradient(90deg, #4fc3f7, #1976d2);
+  color: #fff;
+  border: none;
+  margin-left: 0;
+}
+
+.main-scroll {
+  flex: 1;
+  min-height: 0;
+  max-height: 100vh;
+  overflow: hidden;
+  padding-bottom: 120rpx;
+}
+
+/* 景点详细介绍部分样式 */
+.places-section {
+  margin: 40rpx 0;
+  padding: 0 30rpx;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  color: #333;
+}
+
+.place-item {
+  margin-bottom: 40rpx;
+  background: #fff;
+  border-radius: 12rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.place-image {
+  width: 100%;
+  height: 400rpx;
+  background-color: #f5f5f5;
+}
+
+.place-info {
+  padding: 20rpx;
+}
+
+.place-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.place-desc {
+  font-size: 28rpx;
+  color: #666;
+  line-height: 1.6;
+}

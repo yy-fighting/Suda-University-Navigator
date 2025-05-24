@@ -20,7 +20,7 @@ Page({
           name: "文星阁",
           latitude: 31.306778,  // 替换为实际经度
           longitude: 120.640083, // 替换为实际纬度
-          image: "../../images/wenxinge.png",
+          image: "images/wenxinge.png",
           description: "文星阁，又称方塔、钟楼，位于江苏省苏州市姑苏区苏州大学天赐庄校区内。于明万历十七年（1589年）年筑台基，至万历二十四年（1596年）年建成。现存文星阁是万历四十年（1612年）重建的文峰塔。 ",
           openTime : "活动时间开放"
         },
@@ -28,7 +28,7 @@ Page({
           name: "理工楼",
           latitude: 31.308659,  // 替换为实际经度
           longitude: 120.639693, // 替换为实际纬度
-          image: "../../images/computer-building.png",
+          image: "images/computer-building.png",
           description: "苏州大学理工楼建筑群...",
           openTime:"8:00-17:00"
         }
@@ -38,7 +38,7 @@ Page({
           name : "方塔餐厅",
           latitude: 31.308659,  // 替换为实际经度
           longitude: 120.639693, // 替换为实际纬度
-          image: "../../images/food1.jpg",
+          image: "images/food1.jpg",
           description: "一楼：千里香",
           openTime:"晚上七点左右会逐渐停止营业"
         },
@@ -46,7 +46,7 @@ Page({
           name : "梅花餐厅",
           latitude: 31.308659,  // 替换为实际经度
           longitude: 120.639693, // 替换为实际纬度
-          image: "../../images/food2.jpg",
+          image: "images/food2.jpg",
           description: "二楼：汉堡",
           openTime:"汉堡好像会开到八九点"
         }

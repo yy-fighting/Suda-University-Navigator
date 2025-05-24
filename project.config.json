@@ -18,7 +18,24 @@
       "ignore": [],
       "disablePlugins": [],
       "outputPath": ""
-    }
+    },
+    "condition": false,
+    "subpackages": [
+      {
+        "root": "pages/routeMap",
+        "pages": [
+          "routeMap"
+        ]
+      },
+      {
+        "root": "pages/lead",
+        "pages": [
+          "lead"
+        ]
+      }
+    ],
+    "urlCheck": false,
+    "checkSiteMap": false
   },
   "condition": {},
   "editorSetting": {

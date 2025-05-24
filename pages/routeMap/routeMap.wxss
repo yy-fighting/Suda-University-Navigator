@@ -1,30 +1,37 @@
 /* pages/routeMap/routeMap.wxss */
 /* index.wxss */
 .container {
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Arrange children vertically */
   height: 100vh;
   width: 100vw;
-  flex-direction: column;
-  position: relative; /* 新增 */
+  position: relative;
   padding: 0;
+  background-color: #f4f5f8; /* Added a light background for the page */
 }
- 
+
+.map-element {
+  flex: 1; /* Map takes up available space */
+  width: 100%;
+  /* height: 55vh; */ /* Or use flex-basis: 55%; if preferred */
+}
+
 .title {
-  position: absolute;/* 相对于父容器 */
+  position: absolute;
   background-color: white;
   top: 30rpx;
-  left: 80rpx;
-  right: 80rpx;
-  z-index: 999; /* 确保在地图上方 */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  width: 80%; /* Adjust width as needed */
+  max-width: 500rpx; /* Max width for larger screens */
+  z-index: 999;
   border-radius: 50rpx;
-  /* 添加以下两行，使内部文本居中 */
   display: flex;
-  justify-content: center; /* 水平居中 */
-  align-items: center;      /* 垂直居中（可选） */
-  height: 60rpx;             /*设置固定高度以便垂直居中（可选） */
+  justify-content: center;
+  align-items: center;
+  height: 60rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0,0,0,0.1); /* Added a subtle shadow */
 }
-
-
-
 
 /* 需要给地图容器添加相对定位 */
 #map {
@@ -32,57 +39,68 @@
 }
 
 /* index.wxss 修改部分 */
-.card-background {
-  position: absolute;
-  top: 55vh;
-  height: 50vh;
+.card-section {
+  /* position: absolute; */ /* No longer absolute */
+  /* top: 55vh; */ /* Removed */
+  height: auto; /* Adjust height based on content */
+  min-height: 35vh; /* Minimum height */
   width: 100vw;
-  background: linear-gradient(#bcdcee 0%, #f4f5f8 100%);
-  border-radius: 50rpx 50rpx 0 0; /* 修复圆角显示问题 */
-  overflow: hidden; /* 新增防止内容溢出 */
+  background: linear-gradient(#bcdcee 0%, #f4f5f8 40%); /* Adjusted gradient */
+  border-radius: 50rpx 50rpx 0 0;
+  overflow: hidden;
+  padding-top: rpx; /* Added padding */
+  box-shadow: 0 -2rpx 10rpx rgba(0,0,0,0.05); /* Added subtle shadow */
+  display: flex; /* Use flex for internal alignment */
+  flex-direction: column; /* Stack tab-text and swiper vertically */
 }
 
 .tab-text {
-  position: absolute;
-  left:30rpx;
+  /* position: absolute; */ /* No longer absolute */
+  /* left:30rpx; */ /* Removed */
+  align-self: flex-start; /* Align to the start of the flex container */
+  margin-left: 30rpx; /* Keep left margin */
   font-size: 34rpx;
   color: rgb(0, 0, 0);
   transition: all 0.3s;
-  padding: 8rpx 24rpx;
+  padding: 13rpx 24rpx;
   border-radius: 50rpx;
-  margin: 10rpx;
+  margin-bottom: 0rpx; /* Adjusted margin */
 }
 
-
-
-
-
 .content-swiper {
-  position: absolute;
-  top:70rpx;
-  left:25rpx;
-  right:25rpx;
-  height: 37vh;
+  /* position: absolute; */ /* No longer absolute */
+  /* top:70rpx; */ /* Removed */
+  /* left:25rpx; */ /* Removed */
+  /* right:25rpx; */ /* Removed */
+  width: calc(100% - 50rpx); /* Adjust width to account for margins */
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+  height: 30vh; /* Adjusted height, was 37vh, might need further tweaking */
   border-radius: 32rpx;
   overflow: hidden;
+  margin-bottom: 20rpx; /* Added margin at the bottom */
+  background-color: white;
 }
 
 .info-card {
   background: white;
   border-radius: 32rpx;
-  height: 40vh;
+  height: 50%; /* Make card take full height of swiper-item */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */ /* Adjusted for better content flow */
+  padding: 20rpx; /* Added padding to the card itself */
+  box-sizing: border-box; /* Include padding in height/width calculation */
 }
 
 .image-wrapper {
-  height: 15vh;
-  width: 30vw;
-  margin:20rpx;
+  height: 12vh; /* Adjusted */
+  width: 28vw;  /* Adjusted */
+  margin: 0; /* Removed margin, handled by card padding */
+  margin-right: 20rpx; /* Keep a right margin for text separation */
   flex-shrink: 0;
   overflow: hidden;
-  border-radius: 32rpx;
+  border-radius: 20rpx; /* Slightly smaller radius */
   background: #f5f7fa;
 }
 
@@ -92,75 +110,123 @@
   transition: transform 0.3s;
 }
 
-.content-area {
-  flex: 1;
-  padding: 20rpx;
+/* New structure for card content: image and text side-by-side */
+.card-content-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start; /* Align items to the top */
+  width: 100%;
+  margin-bottom: 15rpx; /* Space before description */
+}
+
+.card-text-details {
   display: flex;
   flex-direction: column;
-  gap: 20rpx;
-  position: relative;
+  flex: 1; /* Allow text details to take remaining space */
 }
 
 .title-row {
-  position: absolute;
-  left: 40vw;
-  top:2vh;
+  /* position: absolute; */ /* Removed absolute positioning */
+  /* left: 40vw; */ /* Removed */
+  /* top:2vh; */   /* Removed */
+  display: flex;
+  width: 100%;
+  margin-bottom: 10rpx; /* Space between title and description if desc is also in title-row */
 }
 
 .card-title {
-  font-size: 38rpx;
+  font-size: 36rpx; /* Slightly adjusted */
   font-weight: 600;
-  color: #2c3e50;
-  max-width: 70%;
+  color: #10a9e6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  width: 100%; /* Title takes full width of its container */
 }
 
-.open-time {
-  font-size: 24rpx;
-  color: #e74c3c;
-  background: #fdedec;
-  padding: 8rpx 24rpx;
-  border-radius: 50rpx;
-  flex-shrink: 0;
-  margin-top: 20rpx;
+.content-area {
+  /* flex: 1; */ /* No longer needed if card-desc handles its own space */
+  padding: 0; /* Removed padding, handled by info-card */
+  /* display: flex; */ /* Not needed for single text element */
+  /* flex-direction: column; */ /* Not needed */
+  /* gap: 20rpx; */ /* Removed */
+  /* position: relative; */ /* Removed */
+  margin: 20rpx;
+  width: 95%;
 }
 
 .card-desc {
-  font-size: 25rpx;
-  color: #7f8c8d;
-  line-height: 1.6;
-  flex:1;
-  max-height: 100rpx;
+  font-size: 30rpx; /* Slightly adjusted */
+  color: black;
+  line-height: 1.5;
 }
-/* 位于 */
-.action-button {
-  position:absolute;
-  bottom: 15rpx;
-  align-self: center;
+.opentime-area{
+  background-color: rgb(216, 239, 247);
+  border-radius: 20rpx;
+  width: 80%;
+  text-align: center;     /* 水平居中 */
+}
+.opentime-desc{
+  text-align: center;     /* 水平居中 */
+}
+.button-icon {
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 12rpx;
+}
+/* Bottom navigation button styling */
+.bottom-nav-button-container {
+  width: 100%;
+  padding: 10rpx 40rpx; /* Add some padding */
+  box-sizing: border-box;
+  background-color: #f4f5f8; /* Match page background or make it distinct */
+  /* border-top: 1rpx solid #e0e0e0; */ /* Optional top border */
+  display: flex; /* For centering the button if needed */
+  justify-content: center; /* For centering the button if needed */
+}
+
+.action-button.global-nav-button {
+  /* position:absolute; */ /* No longer absolute */
+  /* bottom: 15rpx; */ /* Removed */
+  /* align-self: center; */ /* Removed */
+  width: 90%; /* Make button wider */
+  max-width: 600rpx; /* Max width */
   display: flex;
   align-items: center;
+  justify-content: center; /* Center text in button */
   gap: 12rpx;
   background: linear-gradient(135deg, #3498db, #2980b9);
-  padding: 5rpx;
-  border-radius: 30rpx;
+  padding: 20rpx; /* Increase padding for a larger button */
+  border-radius: 50rpx; /* More pronounced radius */
   transition: transform 0.2s;
-  height: 55rpx;
+  height: auto; /* Adjust height based on padding */
+  font-size: 32rpx; /* Larger font for global button */
+}
+
+.action-button.global-nav-button .btn-text {
+  font-size: 30rpx; /* Adjust text size if needed */
+  color: white;
+  font-weight: 500;
+  width: auto; /* Let text determine width */
+  margin-left: 0; /* Remove margin if icon is not used or centered */
 }
 
 .action-button:active {
-  transform: scale(0.96);
+  transform: scale(0.98);
 }
 
-.btn-text {
-  font-size: 25rpx;
-  color: white;
-  font-weight: 500;
-  width: 152rpx;
+/* Remove redundant or conflicting styles for btn-text and btn-icon if they were generic */
+/* Ensure .btn-text inside .global-nav-button is specific enough or remove general .btn-text styles if they conflict */
+
+/* Styles for .open-time, .function-buttons, .function-btn, .btn-icon (generic) might need review if they are still used or conflict */
+
+/* Ensure .open-time is removed if not used */
+.open-time {
+  /* Styles for open-time if it were to be re-added */
+  /* display: none; */ /* If it's definitely not used */
 }
 
-.btn-icon {
-  width: 28rpx;
-  height: 28rpx;
-}
 /* 功能按钮容器 */
 /* 功能按钮容器 */
 .function-buttons {

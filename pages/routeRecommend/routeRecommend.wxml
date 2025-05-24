@@ -1,1 +1,45 @@
-<button bindtap="navigateToRouteMap">路线地图</button>
+<view class="container">
+  <!-- 顶部图片按钮 -->
+  <view class="route-tabs">
+    <block wx:for="{{routes}}" wx:key="index">
+      <view class="route-tab {{selectedIdx === index ? 'active' : ''}}" data-idx="{{index}}" bindtap="onRouteTab">
+        <image class="route-img" src="{{item.img}}" mode="aspectFill" />
+        <view class="route-title">{{item.title}}</view>
+        <view class="route-desc">{{item.desc}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 可滚动主要内容区 -->
+  <scroll-view class="main-scroll" scroll-y="true">
+    <view class="main-content">
+      <view class="day-title">{{routes[selectedIdx].detail.day}}</view>
+      <view style="height: 32rpx;"></view>
+      <image class="main-img" src="{{routes[selectedIdx].img}}" mode="aspectFill" />
+      <view class="summary">{{routes[selectedIdx].detail.summary}}</view>
+      
+      <!-- 景点详细介绍部分 -->
+      <view class="places-section">
+        <view class="section-title">景点介绍</view>
+        <block wx:for="{{routes[selectedIdx].detail.places}}" wx:key="name">
+          <view class="place-item">
+            <image class="place-image" src="{{item.image}}" mode="aspectFill" />
+            <view class="place-info">
+              <view class="place-name">{{item.name}}</view>
+              <view class="place-desc">{{item.desc}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <view class="tips">
+        <text class="tips-title">✨打卡/打卡点：</text>{{routes[selectedIdx].detail.tips}}
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 右下角悬浮按钮区 -->
+  <view class="bottom-btns">
+    <button class="btn map-btn" bindtap="onMapTap">路线地图</button>
+  </view>
+</view>

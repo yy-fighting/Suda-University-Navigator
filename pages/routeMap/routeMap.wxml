@@ -1,59 +1,68 @@
 <!-- index.wxml 适配版 -->
 <view class="container">
-  <!-- 地图容器（已适配动态坐标） -->
+  <!-- 地图容器 -->
   <map
     id="map"
+    class="map-element"
     latitude="{{mapCenter.latitude}}"
     longitude="{{mapCenter.longitude}}"
     markers="{{markers}}"
-    polyline="{{polyline}}" 
+    polyline="{{polyline}}"
     scale="16"
-    style="width: 100%; height: 70vh;"
     show-location
+    style="width: 100%;"
   ></map>
-  
-  <view class="title">江南文化旅游路线</view>
 
-  <view class="card-background">
+  <view class="title">推荐路线</view>
+
+  <!-- 卡片区域 -->
+  <view class="card-section">
     <view class="tab-text">沿途景点</view>
-    <!-- 这边要只留下景点这一个卡片 -->
-    <swiper 
-      class="content-swiper" 
+    <swiper
+      class="content-swiper"
       current="{{currentSwiper}}"
       bindchange="onSwiperChange"
     >
-      <block wx:for="{{cards[currentTab]}}" wx:key="index">
+      <block wx:for="{{cards[currentTab]}}" wx:key="id">
         <swiper-item>
           <view class="info-card">
-            <!-- 顶部图片 -->
-            <view class="image-wrapper">
-              <image 
-                src="{{item.image}}" 
-                mode="aspectFill" 
-                class="card-image"
-                lazy-load="true"
-              ></image>
+            <!-- New row for image and text details -->
+            <view class="card-content-row">
+              <view class="image-wrapper">
+                <image
+                  src="{{item.image}}"
+                  mode="aspectFill"
+                  class="card-image"
+                  lazy-load="true"
+                ></image>
+              </view>
+              <!-- Container for title and description -->
+              <view class="card-text-details">
+                <view class="title-row">
+                  <image src="../../data/icons/scenery.png" mode="aspectFit" class="button-icon"></image>
+                  <view class="card-title">{{item.name}}</view>
+                </view>
+                <view class="opentime-area">
+                  <text class="opentime-desc">开放时间：{{item.opentime}}</text>
+                </view>
+              </view>
             </view>
-
-            <view class="title-row">
-              <view class="card-title">{{item.name}}</view>
-              <view class="open-time">开放时间：{{item.openTime}}</view>
-            </view>
-
-            <!-- 文字内容区 -->
-            <view class="content-area">
-              <text class="card-desc">{{item.description}}</text>
-            </view>
-            <button 
-                class="action-button" 
-                bindtap="navigateTo" 
-                data-location="{{item}}"
-              >
-                <text class="btn-text">开始导航</text>
-            </button>
+          </view>
+          <view class="content-area">
+            <view class="card-desc">{{item.desc}}</view>
           </view>
         </swiper-item>
       </block>
     </swiper>
+  </view>
+
+  <!-- 底部全局导航按钮 -->
+  <view class="bottom-nav-button-container">
+    <button
+      class="action-button global-nav-button"
+      bindtap="navigateTo"
+    >
+      <text class="btn-text">开始导航</text>
+    </button>
   </view>
 </view>

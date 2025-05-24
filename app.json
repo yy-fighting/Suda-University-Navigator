@@ -11,10 +11,13 @@
     "pages/searchPage/searchPage",
     "pages/scenicList/scenicList",
     "pages/navigation/navigation",
-    "pages/aiChat/aiChat"
+    "pages/aiChat/aiChat",
+    "pages/lead/lead"
   ],
   "window": {
-    "navigationBarTitleText": "地图导航"
+    "navigationBarTitleText": "地图导航",
+    "navigationBarBackgroundColor": "#000000"
+
   },
   "permission": {
     "scope.userLocation": {
