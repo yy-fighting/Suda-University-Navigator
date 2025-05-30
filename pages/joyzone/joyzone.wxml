@@ -1,0 +1,26 @@
+<view class="container">
+  <image class="bg-image" src="../../images/joyzone_background.png" mode="aspectFill"></image>
+  
+  <!-- 搜索框 -->
+  <view class="search-box">
+    <input 
+      class="search-input" 
+      placeholder="搜索娱乐" 
+      bindinput="onSearchInput"
+      value="{{searchValue}}"
+    />
+    <view class="search-icon">
+      <image src="../../images/search_icon.png" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <!-- 列表内容 -->
+  <view class="content-list">
+    <view class="item" wx:for="{{filteredItems}}" wx:key="id" bindtap="navigateToDetail" data-id="{{item.id}}">
+      <view class="item-content">
+        <text class="item-name">{{item.name}}</text>
+        <text class="item-description">{{item.description}}</text>
+      </view>
+    </view>
+  </view>
+</view> 

@@ -1,2 +1,32 @@
 <!--pages/searchPage/searchPage.wxml-->
-<text>pages/searchPage/searchPage.wxml</text>
+<view class="container">
+  <view class="search-header">
+    <view class="search-box">
+      <input type="text" placeholder="搜索景点、美食、住宿..." bindinput="onSearchInput" value="{{searchValue}}"/>
+      <view class="search-btn" bindtap="onSearch">搜索</view>
+    </view>
+  </view>
+
+  <view class="category-list">
+    <view class="category-item" bindtap="navigateToCategory" data-category="sights">
+      <image src="../../data/images/sights.jpeg" mode="aspectFill"></image>
+      <text>景点</text>
+    </view>
+    <view class="category-item" bindtap="navigateToCategory" data-category="eats">
+      <image src="../../data/images/eats.jpg" mode="aspectFill"></image>
+      <text>美食</text>
+    </view>
+    <view class="category-item" bindtap="navigateToCategory" data-category="stay">
+      <image src="../../data/images/stay.jpg" mode="aspectFill"></image>
+      <text>住宿</text>
+    </view>
+    <view class="category-item" bindtap="navigateToCategory" data-category="shop">
+      <image src="../../data/images/shop.jpg" mode="aspectFill"></image>
+      <text>购物</text>
+    </view>
+    <view class="category-item" bindtap="navigateToCategory" data-category="joyzone">
+      <image src="../../data/images/joyzone.jpg" mode="aspectFill"></image>
+      <text>娱乐</text>
+    </view>
+  </view>
+</view>

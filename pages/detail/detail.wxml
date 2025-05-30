@@ -1,0 +1,16 @@
+<view class="page-container">
+  <image class="bg-image" src="{{backgroundImage}}" mode="aspectFill"></image>
+  <view class="container">
+    <view class="header">
+      <text class="title">{{title}}</text>
+    </view>
+    
+    <view class="detail-content">
+      <image class="detail-image" src="{{detailImage}}" mode="aspectFill"></image>
+      <view class="detail-info">
+        <text class="detail-name">{{detailName}}</text>
+        <text class="detail-description">{{detailDescription}}</text>
+      </view>
+    </view>
+  </view>
+</view> 

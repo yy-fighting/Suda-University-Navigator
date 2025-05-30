@@ -90,8 +90,10 @@ Page({
       markers,
       polyline: [{
         points,
-        color: '#FF0000DD',
-        width: 4
+        color: 'rgb(126, 235, 167)', // 路线颜色（支持透明度）
+        width: 6, // 路线宽度
+        borderColor: '#000000', // 边框颜色
+        borderWidth: 2 // 边框宽度
       }]
     })
   },

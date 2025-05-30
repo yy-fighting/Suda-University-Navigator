@@ -1,0 +1,31 @@
+<view class="page-container">
+  <image class="bg-image" src="../../data/images/shop_background.jpg" mode="aspectFill"></image>
+  <view class="container">
+    <view class="header">
+      <text class="title">购物推荐</text>
+    </view>
+    
+    <!-- 搜索框 -->
+    <view class="search-box">
+      <input 
+        class="search-input" 
+        placeholder="搜索购物" 
+        bindinput="onSearchInput"
+        value="{{searchValue}}"
+      />
+      <view class="search-icon">
+        <image src="../../data/images/search_icon.png" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <view class="item-list">
+      <view class="item" wx:for="{{filteredItems}}" wx:key="id" bindtap="navigateToDetail" data-id="{{item.id}}">
+        <view class="item-content">
+          <text class="item-name">{{item.name}}</text>
+          <text class="item-description">{{item.description}}</text>
+        </view>
+        <view class="item-arrow">></view>
+      </view>
+    </view>
+  </view>
+</view> 

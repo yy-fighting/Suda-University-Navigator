@@ -12,7 +12,14 @@
     "pages/scenicList/scenicList",
     "pages/navigation/navigation",
     "pages/aiChat/aiChat",
-    "pages/lead/lead"
+    "pages/lead/lead",
+    "pages/logs/logs",
+    "pages/sights/sights",
+    "pages/eats/eats",
+    "pages/stay/stay",
+    "pages/shop/shop",
+    "pages/joyzone/joyzone"
+
   ],
   "window": {
     "navigationBarTitleText": "地图导航",
