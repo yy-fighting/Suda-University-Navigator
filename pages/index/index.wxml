@@ -13,7 +13,7 @@
   ></map>
 
   <button class="icon-button" bindtap="onsearchTap">
-    <image class="button-icon" src="images/icons/search.png" mode="aspectFit" />
+    <image class="button-icon" src="/data/icons/search.png" mode="aspectFit" />
     <text class="search-text">搜索地点</text>
   </button>
 
@@ -59,19 +59,19 @@
 
               <view class="title-row">
                 <view class="card-title">{{item.name}}</view>
-                <view class="open-time">开放时间：{{item.openTime}}</view>
+                <view class="open-time">开放时间：{{item.opentime}}</view>
               </view>
 
               <!-- 文字内容区 -->
               <view class="content-area">
-                <text class="card-desc">{{item.description}}</text>
+                <text class="card-desc">{{item.desc}}</text>
               </view>
               <button 
                 class="action-button" 
                 bindtap="navigateTo" 
                 data-location="{{item}}"
               >
-                <image class="button-icon" src="images/icons/navigation.png" mode="aspectFit" />
+                <image class="button-icon" src="/data/icons/navigation.png" mode="aspectFit" />
                 <text class="btn-text">开始导航</text>
               </button>
             </view>
@@ -85,7 +85,7 @@
             <!-- 图标 -->
             <image 
               class="btn-icon" 
-              src="images/icons/{{item === '路线推荐' ? 'route' : 'ai'}}.png"
+              src="/data/icons/{{item === '路线推荐' ? 'route' : 'ai'}}.png"
               mode="aspectFit"
             />
             <!-- 文字 -->

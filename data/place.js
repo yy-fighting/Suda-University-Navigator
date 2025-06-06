@@ -1,12 +1,24 @@
+//
+// place.js
+// 用途：存储苏州大学校园内各个地点的基础信息，供多个页面引用。
+// 所有页面通过 require 引入该文件即可获取地点数据。
+//const places = require('../data/place.js');
+//Page({
+//  data: {
+//    placesList: places
+//  }
+//});
+//如果要添加数据,请按照相同的格式添加。美食数据在food.js中
 module.exports = [
+  //景点数据
     {
-        id: 1,
-        name: "北校门",
-        lat: 31.309473,
-        lng: 120.639557,
-        desc: "位于江苏省苏州市姑苏区干将东路333号，出北门可到达相门城楼、仓街、平江路等景点。",
-        image: "/data/images/image1.png",
-        opentime:"8:00-12:00"
+      id: 1,               // 唯一标识符（必填，整数）
+      name: "北校门",      // 地点名称（必填，字符串）
+      lat: 31.309473,      // 纬度（必填，浮点数）
+      lng: 120.639557,     // 经度（必填，浮点数）
+      desc: "位于江苏省苏州市姑苏区干将东路333号，出北门可到达相门城楼、仓街、平江路等景点。", // 描述信息（必填，字符串）
+      image: "/data/images/image1.png", // 图片路径（必填，字符串）
+      opentime: "8:00-12:00" // 开放时间
     },
 
     {
@@ -138,4 +150,4 @@ module.exports = [
         image: "/data/images/image14.png",
         opentime:"8:00-12:00"
     }
-  ];
+];
