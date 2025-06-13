@@ -5,12 +5,31 @@
       <text class="title">{{title}}</text>
     </view>
     
-    <view class="detail-content">
-      <image class="detail-image" src="{{detailImage}}" mode="aspectFill"></image>
+    <view class="detail-content" wx:if="{{!loading}}">
+      <image 
+        class="detail-image" 
+        src="{{detailImage}}" 
+        mode="aspectFill"
+        binderror="onImageError"
+      ></image>
       <view class="detail-info">
         <text class="detail-name">{{detailName}}</text>
         <text class="detail-description">{{detailDescription}}</text>
+        <text class="detail-location" wx:if="{{location}}">位置：{{location}}</text>
       </view>
+    </view>
+
+    <view class="loading-container" wx:else>
+      <view class="loading">
+        <view class="loading-icon"></view>
+        <text class="loading-text">加载中...</text>
+      </view>
+    </view>
+
+    <!-- 导航按钮 -->
+    <view class="nav-button" bindtap="navigateToMap" wx:if="{{!loading && location}}">
+      <image class="nav-icon" src="../../data/icons/navigation.png" mode="aspectFit"></image>
+      <text>导航到这里</text>
     </view>
   </view>
 </view> 

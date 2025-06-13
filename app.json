@@ -18,8 +18,8 @@
     "pages/eats/eats",
     "pages/stay/stay",
     "pages/shop/shop",
-    "pages/joyzone/joyzone"
-
+    "pages/joyzone/joyzone",
+    "pages/detail/detail"
   ],
   "window": {
     "navigationBarTitleText": "地图导航",
