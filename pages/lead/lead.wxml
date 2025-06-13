@@ -5,57 +5,51 @@
     class="map-element"
     latitude="{{mapCenter.latitude}}"
     longitude="{{mapCenter.longitude}}"
+    scale="{{scale}}"
     markers="{{markers}}"
     polyline="{{polyline}}"
-    scale="16"
-    show-location
-    style="width: 100%;"
+    show-location="true"
+    show-compass="true"
+    enable-rotate="true"
+    enable-3D="true"
+    enable-overlooking="true"
+    enable-zoom="true"
+    enable-scroll="true"
+    enable-traffic="false"
+    enable-poi="true"
+    enable-building="true"
+    show-scale="true"
+    show-location="true"
+    style="width: 100%; height: 100%;"
   ></map>
 
   <!-- 导航信息面板 -->
   <view class="navigation-panel">
-    <!-- 总览信息 -->
-    <view class="overview">
-      <view class="total-info">
-        <text class="info-label">总距离</text>
-        <text class="info-value">{{totalDistance}}米</text>
+    <!-- 当前导航信息 -->
+    <view class="current-navigation">
+      <view class="current-step">
+        <text class="step-instruction">{{currentInstruction}}</text>
       </view>
-      <view class="total-info">
-        <text class="info-label">预计时间</text>
-        <text class="info-value">{{totalDuration}}分钟</text>
-      </view>
-    </view>
-
-    <!-- 导航步骤 -->
-    <view class="steps-container">
-      <scroll-view scroll-y class="steps-list">
-        <view 
-          class="step-item {{currentStep === index ? 'active' : ''}}"
-          wx:for="{{navigationSteps}}"
-          wx:key="index"
-        >
-          <view class="step-number">{{index + 1}}</view>
-          <view class="step-content">
-            <text class="step-instruction">{{item.instruction}}</text>
-            <view class="step-details">
-              <text class="step-distance">{{item.distance}}米</text>
-              <text class="step-duration">{{item.duration}}分钟</text>
-            </view>
-          </view>
+      
+      <!-- 剩余信息 -->
+      <view class="remaining-info">
+        <view class="info-item">
+          <text class="info-label">剩余距离</text>
+          <text class="info-value">{{remainingDistance}}米</text>
         </view>
-      </scroll-view>
+        <view class="info-item">
+          <text class="info-label">预计时间</text>
+          <text class="info-value">{{estimatedTime}}分钟</text>
+        </view>
+      </view>
     </view>
 
     <!-- 导航控制按钮 -->
     <view class="navigation-controls">
-      <button class="control-btn prev" bindtap="prevStep" disabled="{{currentStep === 0}}">
-        上一步
-      </button>
-      <button class="control-btn next" bindtap="nextStep" disabled="{{currentStep === navigationSteps.length - 1}}">
-        下一步
-      </button>
-      <button class="control-btn end" bindtap="endNavigation">
-        结束导航
+      <button class="control-button end-button" bindtap="endNavigation">结束导航</button>
+      <button class="control-button {{isSimulating ? 'pause-button' : 'start-button'}}" 
+              bindtap="{{isSimulating ? 'pauseSimulation' : 'startSimulation'}}">
+        {{isSimulating ? '暂停' : '开始'}}
       </button>
     </view>
   </view>

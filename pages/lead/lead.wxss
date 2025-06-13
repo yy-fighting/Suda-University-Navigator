@@ -1,54 +1,112 @@
 .container {
-  height: 100vh;
   width: 100vw;
+  height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
-  background-color: #f4f5f8;
 }
 
 .map-element {
-  flex: 1;
   width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .navigation-panel {
   position: absolute;
   bottom: 0;
   left: 0;
-  right: 0;
-  background: white;
-  border-radius: 30rpx 30rpx 0 0;
-  padding: 30rpx;
-  box-shadow: 0 -2rpx 10rpx rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 20rpx;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20rpx;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  border-radius: 20rpx 20rpx 0 0;
 }
 
-.overview {
+.current-navigation {
+  padding: 20rpx;
+}
+
+.current-step {
+  margin-bottom: 20rpx;
+}
+
+.step-instruction {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.step-details {
+  font-size: 28rpx;
+  color: #666;
+  display: block;
+}
+
+.remaining-info {
   display: flex;
   justify-content: space-around;
-  padding: 20rpx 0;
-  border-bottom: 1rpx solid #eee;
+  margin: 20rpx 0;
+  padding: 20rpx;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10rpx;
 }
 
-.total-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10rpx;
+.info-item {
+  text-align: center;
 }
 
 .info-label {
   font-size: 24rpx;
   color: #666;
+  display: block;
+  margin-bottom: 5rpx;
 }
 
 .info-value {
   font-size: 32rpx;
   color: #333;
-  font-weight: 500;
+  font-weight: bold;
+}
+
+.navigation-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  gap: 20rpx;
+}
+
+.control-button {
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  border: none;
+}
+
+.end-button {
+  background-color: #ff4d4f;
+  color: white;
+}
+
+.start-button {
+  background-color: #1890ff;
+  color: white;
+}
+
+.pause-button {
+  background-color: #faad14;
+  color: white;
+}
+
+.control-button:active {
+  opacity: 0.8;
 }
 
 .steps-container {
@@ -91,59 +149,7 @@
   gap: 10rpx;
 }
 
-.step-instruction {
-  font-size: 28rpx;
-  color: #333;
-  line-height: 1.4;
-}
-
-.step-details {
-  display: flex;
-  gap: 20rpx;
-}
-
-.step-distance,
 .step-duration {
   font-size: 24rpx;
-  color: #666;
-}
-
-.navigation-controls {
-  display: flex;
-  justify-content: space-between;
-  gap: 20rpx;
-  padding-top: 20rpx;
-  border-top: 1rpx solid #eee;
-}
-
-.control-btn {
-  flex: 1;
-  height: 80rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 40rpx;
-  font-size: 28rpx;
-  border: none;
-}
-
-.control-btn.prev {
-  background: #f0f0f0;
-  color: #666;
-}
-
-.control-btn.next {
-  background: #3498db;
-  color: white;
-}
-
-.control-btn.end {
-  background: #e74c3c;
-  color: white;
-}
-
-.control-btn[disabled] {
-  opacity: 0.5;
-  background: #ccc;
   color: #666;
 } 
