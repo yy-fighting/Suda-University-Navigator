@@ -1,11 +1,10 @@
+// 引入数据文件
+const eatsData = require('../../data/eats.js');
+
 Page({
   data: {
     searchValue: '',
-    items: [
-      { id: 1, name: '美食1', description: '美食1的详细描述' },
-      { id: 2, name: '美食2', description: '美食2的详细描述' },
-      { id: 3, name: '美食3', description: '美食3的详细描述' }
-    ],
+    items: eatsData,
     filteredItems: [] // 用于存储过滤后的项目
   },
 
@@ -20,7 +19,7 @@ Page({
     const searchValue = e.detail.value.toLowerCase();
     const filteredItems = this.data.items.filter(item => 
       item.name.toLowerCase().includes(searchValue) || 
-      item.description.toLowerCase().includes(searchValue)
+      item.describe.toLowerCase().includes(searchValue)
     );
     
     this.setData({

@@ -1,11 +1,10 @@
+// 引入数据文件
+const joyzoneData = require('../../data/joyzone.js');
+
 Page({
   data: {
     searchValue: '',
-    items: [
-      { id: 1, name: '娱乐1', description: '娱乐1的详细描述' },
-      { id: 2, name: '娱乐2', description: '娱乐2的详细描述' },
-      { id: 3, name: '娱乐3', description: '娱乐3的详细描述' }
-    ],
+    items: joyzoneData,
     filteredItems: [] // 用于存储过滤后的项目
   },
 
@@ -20,7 +19,7 @@ Page({
     const searchValue = e.detail.value.toLowerCase();
     const filteredItems = this.data.items.filter(item => 
       item.name.toLowerCase().includes(searchValue) || 
-      item.description.toLowerCase().includes(searchValue)
+      item.describe.toLowerCase().includes(searchValue)
     );
     
     this.setData({

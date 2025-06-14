@@ -1,12 +1,11 @@
 // pages/shop/shop.js
+// 引入数据文件
+const shopData = require('../../data/shop.js');
+
 Page({
   data: {
     searchValue: '',
-    items: [
-      { id: 1, name: '购物1', description: '购物1的详细描述' },
-      { id: 2, name: '购物2', description: '购物2的详细描述' },
-      { id: 3, name: '购物3', description: '购物3的详细描述' }
-    ],
+    items: shopData,
     filteredItems: [] // 用于存储过滤后的项目
   },
 
@@ -21,7 +20,7 @@ Page({
     const searchValue = e.detail.value.toLowerCase();
     const filteredItems = this.data.items.filter(item => 
       item.name.toLowerCase().includes(searchValue) || 
-      item.description.toLowerCase().includes(searchValue)
+      item.describe.toLowerCase().includes(searchValue)
     );
     
     this.setData({

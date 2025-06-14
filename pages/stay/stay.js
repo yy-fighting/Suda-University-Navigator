@@ -1,11 +1,10 @@
+// 引入数据文件
+const stayData = require('../../data/stay.js');
+
 Page({
   data: {
     searchValue: '',
-    items: [
-      { id: 1, name: '酒店1', description: '酒店1的详细描述' },
-      { id: 2, name: '酒店2', description: '酒店2的详细描述' },
-      { id: 3, name: '酒店3', description: '酒店3的详细描述' }
-    ],
+    items: stayData,
     filteredItems: [] // 用于存储过滤后的项目
   },
 
@@ -20,7 +19,7 @@ Page({
     const searchValue = e.detail.value.toLowerCase();
     const filteredItems = this.data.items.filter(item => 
       item.name.toLowerCase().includes(searchValue) || 
-      item.description.toLowerCase().includes(searchValue)
+      item.describe.toLowerCase().includes(searchValue)
     );
     
     this.setData({
