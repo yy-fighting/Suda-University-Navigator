@@ -37,7 +37,7 @@ module.exports = [
         lat: 31.306370,
         lng: 120.641097,
         desc: "博远楼，学生们日常上课的教学楼之一，共四层。",
-        image: "/data/images/image3.png",
+        image: "/data/images/image2.png",
         opentime:"8:00-12:00"
     },
 
