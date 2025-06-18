@@ -10,21 +10,21 @@ module.exports = [
         id: 2,
         name: "苏大文创店",
         describe: "售卖苏州大学特色文创产品，包括校徽、纪念品、文化衫等。是购买校园纪念品的理想场所。",
-        image: "/data/images/shop2.jpg",
+        image: "/data/images/shop2.webp",
         location: "本部老校门附近"
     },
     {
         id: 3,
         name: "学生书店",
         describe: "内有各种教辅材料，还有一点点奶茶",
-        image: "/data/images/shop3.jpg",
+        image: "/data/images/shop3.webp",
         location: "东吴桥东区一侧下桥十字路口"
     },
     {
         id: 4,
         name: "星巴克",
         describe: "星巴克苏大东区分店",
-        image: "/data/images/shop4.jpg",
+        image: "/data/images/shop4.webp",
         location: "东吴桥东区一侧下桥十字路口"
     },
     {

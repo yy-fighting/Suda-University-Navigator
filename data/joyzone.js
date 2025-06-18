@@ -5,14 +5,14 @@ module.exports = [
         id: 1,
         name: "健身中心",
         describe: "设备齐全的现代化健身场所，配备有氧训练区、力量训练区和功能性训练区，提供专业健身指导。学生可在此进行系统的体能训练和形体塑造。",
-        image: "/data/images/joyzone1.jpg",
+        image: "/data/images/joyzone1.webp",
         location: "本部梅花食堂旁"
     },
     {
         id: 2,
         name: "乒乓球馆",
         describe: "专业乒乓球运动场馆，设有多个标准球台和比赛场地，地面采用专业防滑材料。定期举办校内乒乓球联赛和趣味赛事。",
-        image: "/data/images/joyzone2.jpg",
+        image: "/data/images/joyzone2.webp",
         location: "本部工体楼"
     },
     {
@@ -26,7 +26,7 @@ module.exports = [
         id: 4,
         name: "游泳馆",
         describe: "仅雨天可用：）",
-        image: "/data/images/joyzone4.jpg",
+        image: "/data/images/joyzone4.webp",
         location: "东区体育馆"
     },
     {

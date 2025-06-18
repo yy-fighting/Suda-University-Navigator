@@ -3,21 +3,21 @@ module.exports = [
         id: 1,
         name: "莘园公寓",
         describe: "校内供外宾住宿的场所",
-        image: "/data/images/stay1.jpg",
+        image: "/data/images/stay1.webp",
         location: "本部校区情人坡旁"
     },
     {
         id: 2,
         name: "北疆饭店住宿部",
         describe: "地处苏州古城区与工业园区交界处，向东1.5公里可达工业园区CBD，向西800米可达观前街步行街核心商业区。",
-        image: "/data/images/stay2.jpg",
+        image: "/data/images/stay2.webp",
         location: "姑苏区干将东路428号"
     },
     {
         id: 3,
         name: "美居酒店",
         describe: "苏州观前平江美居酒店毗邻平江路的历史文化街区，靠近轻轨 1 号线、苏州大学、苏州观前街和苏州工业园区。酒店距离苏州博物馆、拙政园、狮子林和其他著名景点仅 10 分钟车程。是休闲及商务旅客的理想入住选择。",
-        image: "/data/images/stay3.jpg",
+        image: "/data/images/stay3.webp",
         location: "姑苏区干将东路535号"
     },
     {
